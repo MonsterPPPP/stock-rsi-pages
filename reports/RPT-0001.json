@@ -1,0 +1,149 @@
+{
+  "id": "RPT-0001",
+  "frozen_at": "2026-10-15T22:33:01+08:00",
+  "data_cutoff": "2026-10-15T15:00:00+08:00",
+  "rules_version": "RULE-0001",
+  "decision_reason": "短窗实验不足以支持权益仓位启用。防守方案和均衡研究候选本期均持有现金，等待更完整的数据与固定规则验证。",
+  "accounts": [
+    {
+      "id": "defensive",
+      "name": "防守方案",
+      "risk_label": "低波动取向 / 现金规则已冻结",
+      "decision": "本期100%持现；不自动转入权益。",
+      "status": "独立账本已准备，成功发布后按规则生效。"
+    },
+    {
+      "id": "balanced_research",
+      "name": "均衡研究候选",
+      "risk_label": "权益上限60%候选 / 尚未准入",
+      "decision": "本期100%持现；趋势规则仅用于研究。",
+      "status": "候选权益策略未验证；不把回测作为账户成绩。"
+    }
+  ],
+  "research_finding": "趋势过滤在本段样本中亏损较少，但仍亏损，尚未形成可交易的策略证据。",
+  "research_caution": "以下仅为公司行动完整性受限条件下的历史诊断数值。116个交易日、单一ETF、6笔趋势成交不能证明长期优势，也不是发布后业绩。",
+  "experiment_period": "510300；暖机自2026-01-20起，评价区间2026-04-23至2026-10-15，共116个交易日",
+  "limitations": [
+    "公司行动核验依赖基金官网公告标题索引与辅助记录；尚未取得完整原始事件库，因此保留未完全确认标志。发现遗漏分红需追加纠正。",
+    "腾讯与新浪430日日线OHLC一致；两个提供商仍可能共享上游。日期仅做二源一致性检查，尚未与交易所日历逐日核对。",
+    "日线开盘加滑点只是历史成交代理，无开盘盘口、排队或部分成交证据；零全天成交量只能事后确认。",
+    "样本仅一个宽基ETF和116个评价交易日，全部已用于探索，不是独立样本外验证。未进行网格优化。",
+    "最低佣金与实际账户条件未知。手续费、滑点采用显式假设与压力测试；尾日持仓未强制卖出，未扣未来卖出费。",
+    "两个风险方向在本期都持现；均衡方案仅是待验证候选，不代表已有第二个有效风险策略。现金有机会成本与购买力风险。"
+  ],
+  "sources": [
+    {
+      "title": "上交所：ETF交易与账户常见问题",
+      "url": "https://www.sse.com.cn/assortment/fund/etf/question/"
+    },
+    {
+      "title": "上交所：2026年修订交易规则",
+      "url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/fund/trading/c/c_20260424_10817739.shtml"
+    },
+    {
+      "title": "华泰柏瑞510300：2026年1月分红公告",
+      "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-01-12/510300_20260112_VTCZ.pdf"
+    },
+    {
+      "title": "华泰柏瑞基金：公告检索",
+      "url": "https://www.huatai-pb.com/search.html"
+    },
+    {
+      "title": "上交所投教：ETF交易税费",
+      "url": "https://edu.sse.com.cn/best/article/mcontent/c/4731121.shtml"
+    },
+    {
+      "title": "麦高证券：佣金公示示例，非用户实际费率",
+      "url": "https://www.mgzq.com/f/view-dbae498c06434c0da1e5cec2563d9e10-f4773b72db0f44979da43e8455be643e.html"
+    }
+  ],
+  "historical_metrics": {
+    "trend_60pct": {
+      "net_profit": -195.6,
+      "net_return": -0.01956,
+      "annualized_return": -0.04200573692767484,
+      "max_drawdown": -0.04550322241476664,
+      "total_commission": 30.0,
+      "total_slippage": 14.4,
+      "trade_count": 6,
+      "unfilled_order_count": 0,
+      "ending_equity": 9804.4,
+      "ending_cash": 9804.4,
+      "ending_quantity": 0,
+      "evaluation_days": 116
+    },
+    "trend_60pct_stress": {
+      "net_profit": -327.34,
+      "net_return": -0.032734,
+      "annualized_return": -0.06974982095119231,
+      "max_drawdown": -0.0523512762307473,
+      "total_commission": 104.14,
+      "total_slippage": 72.0,
+      "trade_count": 6,
+      "unfilled_order_count": 0,
+      "ending_equity": 9672.66,
+      "ending_cash": 9672.66,
+      "ending_quantity": 0,
+      "evaluation_days": 116
+    },
+    "buy_hold_60pct": {
+      "net_profit": -701.0,
+      "net_return": -0.0701,
+      "annualized_return": -0.14605388086359794,
+      "max_drawdown": -0.09874197987943166,
+      "total_commission": 5.0,
+      "total_slippage": 2.4,
+      "trade_count": 1,
+      "unfilled_order_count": 0,
+      "ending_equity": 9299.0,
+      "ending_cash": 4208.6,
+      "ending_quantity": 1200,
+      "evaluation_days": 116
+    },
+    "buy_hold_60pct_stress": {
+      "net_profit": -722.99,
+      "net_return": -0.072299,
+      "annualized_return": -0.15043474342248364,
+      "max_drawdown": -0.09895287500449212,
+      "total_commission": 17.39,
+      "total_slippage": 12.0,
+      "trade_count": 1,
+      "unfilled_order_count": 0,
+      "ending_equity": 9277.01,
+      "ending_cash": 4186.61,
+      "ending_quantity": 1200,
+      "evaluation_days": 116
+    },
+    "buy_hold_100pct": {
+      "net_profit": -1165.0,
+      "net_return": -0.1165,
+      "annualized_return": -0.2359208030897173,
+      "max_drawdown": -0.16120763315294787,
+      "total_commission": 5.0,
+      "total_slippage": 4.0,
+      "trade_count": 1,
+      "unfilled_order_count": 0,
+      "ending_equity": 8835.0,
+      "ending_cash": 351.0,
+      "ending_quantity": 2000,
+      "evaluation_days": 116
+    },
+    "buy_hold_100pct_stress": {
+      "net_profit": -1204.98,
+      "net_return": -0.120498,
+      "annualized_return": -0.24341221854565265,
+      "max_drawdown": -0.1618218587213214,
+      "total_commission": 28.98,
+      "total_slippage": 20.0,
+      "trade_count": 1,
+      "unfilled_order_count": 0,
+      "ending_equity": 8795.02,
+      "ending_cash": 311.02,
+      "ending_quantity": 2000,
+      "evaluation_days": 116
+    }
+  },
+  "post_publication_performance": null,
+  "rules_sha256": "7f6c47e994c16a0abc02fe96962fe629dc4159501385d08040f3800257e23a4d",
+  "frozen_report_sha256": "3017f704e657737e50599497c3c5eead667bd10c51f9a911fbb0b3a31e504593"
+}
