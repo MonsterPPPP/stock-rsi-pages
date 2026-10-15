@@ -1,0 +1,1383 @@
+{
+  "id": "EXP-0003",
+  "title": "34个标的，三种买卖思路",
+  "as_of": "2026-10-15",
+  "headline": "关注银行与红利，轮动尚未胜过宽基。",
+  "conclusion": "银行与红利同时进入动量、低波动观察名单。三种轮动的历史方向指数均落后同为60%初配的宽基买持；低波动以部分收益换来较小回撤。",
+  "universe": {
+    "etf_count": 10,
+    "stock_count": 24,
+    "stock_sector_count": 12,
+    "valid_etf_count": 9,
+    "valid_stock_count": 19,
+    "excluded_count": 6
+  },
+  "exclusions": [
+    {
+      "symbol": "512660",
+      "name": "军工ETF",
+      "reason": "接口未返回qfq复权字段"
+    },
+    {
+      "symbol": "601318",
+      "name": "中国平安",
+      "reason": "复权序列仅至10月14日"
+    },
+    {
+      "symbol": "600519",
+      "name": "贵州茅台",
+      "reason": "复权序列仅至10月14日"
+    },
+    {
+      "symbol": "000858",
+      "name": "五粮液",
+      "reason": "复权序列仅至10月14日"
+    },
+    {
+      "symbol": "601088",
+      "name": "中国神华",
+      "reason": "已核实历史停牌10日；本轮完整共同日历门槛排除"
+    },
+    {
+      "symbol": "600900",
+      "name": "长江电力",
+      "reason": "复权序列仅至10月14日"
+    }
+  ],
+  "history_window": {
+    "start": "2025-07-04",
+    "end": "2026-10-15",
+    "sessions": 310
+  },
+  "history_metric_label": "价格方向指数（未扣费，非账户收益）",
+  "strategy_exposure": "每个入选槽位初配30%，最多2只；空槽持现。",
+  "budget_scope": "六个10000元预算是互相独立的观察情景，不能合并执行，不是六个已启用账户。",
+  "execution_reference": {
+    "status": "研究观察，未发委托",
+    "earliest_session": "2026-10-16",
+    "latest_signal_date": "2026-10-15",
+    "limit_rule": "原价收盘×1.01，按tick向下取整；未达到价格不追价。",
+    "exit_rule": "每次研究唤醒按最新完整日线复核，退出过滤条件或掉出前两名则移出观察；最长20个交易日后必须重评。",
+    "expiry_rule": "无新研究不产生新委托；当前名单不会自动变为持仓。"
+  },
+  "data_quality": {
+    "source_count": 2,
+    "symbols_checked": 34,
+    "raw_ohlc_comparisons": 58440,
+    "raw_ohlc_mismatches": 0,
+    "latest_all_match": true,
+    "adjustment_note": "腾讯qfq（当前版本）；原价独立交叉核对不等于复权公式已核验。"
+  },
+  "strategies": [
+    {
+      "id": "momentum",
+      "name": "动量领跑",
+      "description": "63日上涨且高于120日均线，按63日涨幅排序。",
+      "exit_condition": "不再满足本规则过滤条件或跌出可负担候选前两名时移出观察；最长20个交易日后重评。",
+      "history": {
+        "price_direction_return": -0.00600211371042203,
+        "max_drawdown": -0.17382487110936484,
+        "selection_count": 16,
+        "mean_exposure": 0.5992570711195664
+      },
+      "etf_candidates": [
+        {
+          "symbol": "512800",
+          "name": "银行ETF",
+          "sector": "银行",
+          "return_63": 0.1251629726205996,
+          "return_20": 0.02494061757719712,
+          "volatility_63": 0.1689950636590336,
+          "ma120_distance": 0.07519960131648618,
+          "raw_close": 0.863,
+          "limit_price": 0.871,
+          "quantity": 3400,
+          "buy_total_cny": 2966.4,
+          "rank": 1,
+          "reason": "趋势向上，63日涨幅领先"
+        },
+        {
+          "symbol": "510880",
+          "name": "红利ETF",
+          "sector": "红利",
+          "return_63": 0.11855500821018072,
+          "return_20": -0.02630074328187537,
+          "volatility_63": 0.17420358034710548,
+          "ma120_distance": 0.04139647822907566,
+          "raw_close": 3.406,
+          "limit_price": 3.44,
+          "quantity": 800,
+          "buy_total_cny": 2757.0,
+          "rank": 2,
+          "reason": "趋势向上，63日涨幅领先"
+        }
+      ],
+      "stock_candidates": [
+        {
+          "symbol": "600028",
+          "name": "中国石化",
+          "sector": "能源",
+          "return_63": 0.16433941997851775,
+          "return_20": -0.015440508628519534,
+          "volatility_63": 0.2978342404353907,
+          "ma120_distance": 0.08641727844453895,
+          "raw_close": 5.42,
+          "limit_price": 5.47,
+          "quantity": 500,
+          "buy_total_cny": 2740.03,
+          "rank": 1,
+          "reason": "趋势向上，63日涨幅领先"
+        },
+        {
+          "symbol": "601398",
+          "name": "工商银行",
+          "sector": "银行",
+          "return_63": 0.15961800818553895,
+          "return_20": 0.0625,
+          "volatility_63": 0.21115350365244306,
+          "ma120_distance": 0.1160286885021693,
+          "raw_close": 8.5,
+          "limit_price": 8.58,
+          "quantity": 300,
+          "buy_total_cny": 2579.03,
+          "rank": 2,
+          "reason": "趋势向上，63日涨幅领先"
+        }
+      ]
+    },
+    {
+      "id": "low_vol",
+      "name": "低波动防御",
+      "description": "63日上涨且高于120日均线，按63日波动率从低到高排序。",
+      "exit_condition": "不再满足本规则过滤条件或跌出可负担候选前两名时移出观察；最长20个交易日后重评。",
+      "history": {
+        "price_direction_return": 0.027195758936654713,
+        "max_drawdown": -0.07505429919171025,
+        "selection_count": 16,
+        "mean_exposure": 0.6009208515369944
+      },
+      "etf_candidates": [
+        {
+          "symbol": "512800",
+          "name": "银行ETF",
+          "sector": "银行",
+          "return_63": 0.1251629726205996,
+          "return_20": 0.02494061757719712,
+          "volatility_63": 0.1689950636590336,
+          "ma120_distance": 0.07519960131648618,
+          "raw_close": 0.863,
+          "limit_price": 0.871,
+          "quantity": 3400,
+          "buy_total_cny": 2966.4,
+          "rank": 1,
+          "reason": "趋势向上，63日波动较低"
+        },
+        {
+          "symbol": "510880",
+          "name": "红利ETF",
+          "sector": "红利",
+          "return_63": 0.11855500821018072,
+          "return_20": -0.02630074328187537,
+          "volatility_63": 0.17420358034710548,
+          "ma120_distance": 0.04139647822907566,
+          "raw_close": 3.406,
+          "limit_price": 3.44,
+          "quantity": 800,
+          "buy_total_cny": 2757.0,
+          "rank": 2,
+          "reason": "趋势向上，63日波动较低"
+        }
+      ],
+      "stock_candidates": [
+        {
+          "symbol": "601668",
+          "name": "中国建筑",
+          "sector": "建筑",
+          "return_63": 0.032885595182955196,
+          "return_20": 0.015945330296127658,
+          "volatility_63": 0.17067881348802663,
+          "ma120_distance": 0.0010848827204368305,
+          "raw_close": 4.46,
+          "limit_price": 4.5,
+          "quantity": 600,
+          "buy_total_cny": 2705.03,
+          "rank": 2,
+          "reason": "趋势向上，63日波动较低"
+        },
+        {
+          "symbol": "600025",
+          "name": "华能水电",
+          "sector": "公用",
+          "return_63": 0.07900207900207912,
+          "return_20": 0.06461538461538474,
+          "volatility_63": 0.190942051697927,
+          "ma120_distance": 0.07966143564807004,
+          "raw_close": 10.38,
+          "limit_price": 10.48,
+          "quantity": 200,
+          "buy_total_cny": 2101.02,
+          "rank": 4,
+          "reason": "趋势向上，63日波动较低"
+        }
+      ]
+    },
+    {
+      "id": "reversal",
+      "name": "趋势内回撤",
+      "description": "63日上涨且高于120日均线，选20日回撤最深的品种。",
+      "exit_condition": "不再满足本规则过滤条件或跌出可负担候选前两名时移出观察；最长20个交易日后重评。",
+      "history": {
+        "price_direction_return": -0.047257331887166076,
+        "max_drawdown": -0.10161908781514728,
+        "selection_count": 16,
+        "mean_exposure": 0.3769272465666946
+      },
+      "etf_candidates": [
+        {
+          "symbol": "510880",
+          "name": "红利ETF",
+          "sector": "红利",
+          "return_63": 0.11855500821018072,
+          "return_20": -0.02630074328187537,
+          "volatility_63": 0.17420358034710548,
+          "ma120_distance": 0.04139647822907566,
+          "raw_close": 3.406,
+          "limit_price": 3.44,
+          "quantity": 800,
+          "buy_total_cny": 2757.0,
+          "rank": 1,
+          "reason": "中期趋势仍向上，短期出现回撤"
+        }
+      ],
+      "stock_candidates": [
+        {
+          "symbol": "600028",
+          "name": "中国石化",
+          "sector": "能源",
+          "return_63": 0.16433941997851775,
+          "return_20": -0.015440508628519534,
+          "volatility_63": 0.2978342404353907,
+          "ma120_distance": 0.08641727844453895,
+          "raw_close": 5.42,
+          "limit_price": 5.47,
+          "quantity": 500,
+          "buy_total_cny": 2740.03,
+          "rank": 1,
+          "reason": "中期趋势仍向上，短期出现回撤"
+        }
+      ]
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "equal_weight_60",
+      "name": "60% ETF等权买持",
+      "price_direction_return": 0.05225245445130877,
+      "max_drawdown": -0.0894921094596215
+    },
+    {
+      "id": "csi300_60",
+      "name": "60% 沪深300买持",
+      "price_direction_return": 0.054629629629629584,
+      "max_drawdown": -0.11050370948848098
+    },
+    {
+      "id": "cash",
+      "name": "现金",
+      "price_direction_return": 0.0,
+      "max_drawdown": 0.0
+    }
+  ],
+  "rankings": {
+    "etf": [
+      {
+        "symbol": "159928",
+        "name": "消费ETF",
+        "sector": "消费",
+        "return_63": 0.044303797468354444,
+        "return_20": -0.027982326951399128,
+        "volatility_63": 0.20657386101950087,
+        "ma120_distance": -0.01662548578949319,
+        "raw_close": 0.66,
+        "limit_price": 0.666,
+        "quantity": 4500,
+        "buy_total_cny": 3002.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 4,
+            "reason": "低于或等于120日均线"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 7,
+            "reason": "低于或等于120日均线"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 7,
+            "reason": "低于或等于120日均线"
+          }
+        }
+      },
+      {
+        "symbol": "510050",
+        "name": "上证50ETF",
+        "sector": "宽基",
+        "return_63": -0.059535492312724925,
+        "return_20": -0.04832836809003638,
+        "volatility_63": 0.14854204116100175,
+        "ma120_distance": -0.04574346265122897,
+        "raw_close": 2.875,
+        "limit_price": 2.903,
+        "quantity": 1000,
+        "buy_total_cny": 2908.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 5,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 4,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 5,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          }
+        }
+      },
+      {
+        "symbol": "510300",
+        "name": "沪深300ETF",
+        "sector": "宽基",
+        "return_63": -0.12155725823151786,
+        "return_20": -0.08518438645676074,
+        "volatility_63": 0.1823786001903539,
+        "ma120_distance": -0.10659000442282174,
+        "raw_close": 4.242,
+        "limit_price": 4.284,
+        "quantity": 700,
+        "buy_total_cny": 3003.8,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 7,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 6,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 4,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          }
+        }
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "sector": "宽基",
+        "return_63": -0.2043513861270324,
+        "return_20": -0.1262684649967888,
+        "volatility_63": 0.30716646758676247,
+        "ma120_distance": -0.15762967243905956,
+        "raw_close": 6.802,
+        "limit_price": 6.87,
+        "quantity": 400,
+        "buy_total_cny": 2753.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 8,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 8,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 3,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          }
+        }
+      },
+      {
+        "symbol": "510880",
+        "name": "红利ETF",
+        "sector": "红利",
+        "return_63": 0.11855500821018072,
+        "return_20": -0.02630074328187537,
+        "volatility_63": 0.17420358034710548,
+        "ma120_distance": 0.04139647822907566,
+        "raw_close": 3.406,
+        "limit_price": 3.44,
+        "quantity": 800,
+        "buy_total_cny": 2757.0,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 2,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 2,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": true,
+            "rank": 1,
+            "reason": "中期趋势仍向上，短期出现回撤"
+          }
+        }
+      },
+      {
+        "symbol": "512000",
+        "name": "券商ETF",
+        "sector": "证券",
+        "return_63": -0.06578947368421062,
+        "return_20": -0.04054054054054057,
+        "volatility_63": 0.18175537382590845,
+        "ma120_distance": -0.03585631607876094,
+        "raw_close": 0.497,
+        "limit_price": 0.501,
+        "quantity": 5900,
+        "buy_total_cny": 2960.9,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 6,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 5,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 6,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          }
+        }
+      },
+      {
+        "symbol": "512010",
+        "name": "医药ETF",
+        "sector": "医药",
+        "return_63": 0.038567493112947604,
+        "return_20": 0.008021390374331583,
+        "volatility_63": 0.26106794066872346,
+        "ma120_distance": 0.03216974674880224,
+        "raw_close": 0.377,
+        "limit_price": 0.38,
+        "quantity": 7800,
+        "buy_total_cny": 2969.0,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 3,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 3,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 8,
+            "reason": "20日未出现回撤"
+          }
+        }
+      },
+      {
+        "symbol": "512760",
+        "name": "芯片ETF",
+        "sector": "芯片",
+        "return_63": -0.3784530386740331,
+        "return_20": -0.13710450623202297,
+        "volatility_63": 0.5463470658668759,
+        "ma120_distance": -0.21241467825681115,
+        "raw_close": 0.9,
+        "limit_price": 0.909,
+        "quantity": 3300,
+        "buy_total_cny": 3004.7,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 9,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 9,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 2,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          }
+        }
+      },
+      {
+        "symbol": "512800",
+        "name": "银行ETF",
+        "sector": "银行",
+        "return_63": 0.1251629726205996,
+        "return_20": 0.02494061757719712,
+        "volatility_63": 0.1689950636590336,
+        "ma120_distance": 0.07519960131648618,
+        "raw_close": 0.863,
+        "limit_price": 0.871,
+        "quantity": 3400,
+        "buy_total_cny": 2966.4,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 1,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 1,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 9,
+            "reason": "20日未出现回撤"
+          }
+        }
+      }
+    ],
+    "stock": [
+      {
+        "symbol": "000333",
+        "name": "美的集团",
+        "sector": "家电",
+        "return_63": 0.07241422964932265,
+        "return_20": -0.015229016507788962,
+        "volatility_63": 0.20893789185440265,
+        "ma120_distance": 0.04545226413867942,
+        "raw_close": 84.71,
+        "limit_price": 85.55,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 7,
+            "reason": "趋势向上，63日涨幅领先；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 6,
+            "reason": "趋势向上，63日波动较低；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": true,
+            "rank": 2,
+            "reason": "中期趋势仍向上，短期出现回撤；一手超过3000元槽位"
+          }
+        }
+      },
+      {
+        "symbol": "000651",
+        "name": "格力电器",
+        "sector": "家电",
+        "return_63": 0.0951724137931036,
+        "return_20": 0.021353228711088468,
+        "volatility_63": 0.16768056548835236,
+        "ma120_distance": 0.05550484326949512,
+        "raw_close": 39.7,
+        "limit_price": 40.09,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 5,
+            "reason": "趋势向上，63日涨幅领先；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 1,
+            "reason": "趋势向上，63日波动较低；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 14,
+            "reason": "20日未出现回撤；一手超过3000元槽位"
+          }
+        }
+      },
+      {
+        "symbol": "002594",
+        "name": "比亚迪",
+        "sector": "汽车",
+        "return_63": -0.08257290109546866,
+        "return_20": -0.04238472286911976,
+        "volatility_63": 0.26029783014038077,
+        "ma120_distance": -0.09236322540676634,
+        "raw_close": 82.24,
+        "limit_price": 83.06,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 17,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 14,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 7,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          }
+        }
+      },
+      {
+        "symbol": "002648",
+        "name": "卫星化学",
+        "sector": "化工",
+        "return_63": 0.09391534391534395,
+        "return_20": -0.1195883605393897,
+        "volatility_63": 0.3799717396972968,
+        "ma120_distance": -0.028055225737536493,
+        "raw_close": 24.81,
+        "limit_price": 25.05,
+        "quantity": 100,
+        "buy_total_cny": 2510.03,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 9,
+            "reason": "低于或等于120日均线"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 18,
+            "reason": "低于或等于120日均线"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 5,
+            "reason": "低于或等于120日均线"
+          }
+        }
+      },
+      {
+        "symbol": "600025",
+        "name": "华能水电",
+        "sector": "公用",
+        "return_63": 0.07900207900207912,
+        "return_20": 0.06461538461538474,
+        "volatility_63": 0.190942051697927,
+        "ma120_distance": 0.07966143564807004,
+        "raw_close": 10.38,
+        "limit_price": 10.48,
+        "quantity": 200,
+        "buy_total_cny": 2101.02,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 6,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 4,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 19,
+            "reason": "20日未出现回撤"
+          }
+        }
+      },
+      {
+        "symbol": "600028",
+        "name": "中国石化",
+        "sector": "能源",
+        "return_63": 0.16433941997851775,
+        "return_20": -0.015440508628519534,
+        "volatility_63": 0.2978342404353907,
+        "ma120_distance": 0.08641727844453895,
+        "raw_close": 5.42,
+        "limit_price": 5.47,
+        "quantity": 500,
+        "buy_total_cny": 2740.03,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 1,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 8,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": true,
+            "rank": 1,
+            "reason": "中期趋势仍向上，短期出现回撤"
+          }
+        }
+      },
+      {
+        "symbol": "600030",
+        "name": "中信证券",
+        "sector": "证券",
+        "return_63": -0.0764084507042253,
+        "return_20": -0.040248810830589066,
+        "volatility_63": 0.18182552582742664,
+        "ma120_distance": -0.030606902413935377,
+        "raw_close": 26.23,
+        "limit_price": 26.49,
+        "quantity": 100,
+        "buy_total_cny": 2654.03,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 16,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 9,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 8,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          }
+        }
+      },
+      {
+        "symbol": "600036",
+        "name": "招商银行",
+        "sector": "银行",
+        "return_63": 0.15672451193058556,
+        "return_20": 0.040487804878048594,
+        "volatility_63": 0.19085736658578484,
+        "ma120_distance": 0.1076414973498998,
+        "raw_close": 42.66,
+        "limit_price": 43.08,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 3,
+            "reason": "趋势向上，63日涨幅领先；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 3,
+            "reason": "趋势向上，63日波动较低；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 15,
+            "reason": "20日未出现回撤；一手超过3000元槽位"
+          }
+        }
+      },
+      {
+        "symbol": "600104",
+        "name": "上汽集团",
+        "sector": "汽车",
+        "return_63": 0.08867694805194803,
+        "return_20": -0.018298261665141702,
+        "volatility_63": 0.23626990687877444,
+        "ma120_distance": -0.03021429281563215,
+        "raw_close": 10.73,
+        "limit_price": 10.83,
+        "quantity": 200,
+        "buy_total_cny": 2171.02,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 10,
+            "reason": "低于或等于120日均线"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 13,
+            "reason": "低于或等于120日均线"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 9,
+            "reason": "低于或等于120日均线"
+          }
+        }
+      },
+      {
+        "symbol": "600276",
+        "name": "恒瑞医药",
+        "sector": "医药",
+        "return_63": -0.16412556053811655,
+        "return_20": 0.04227242227689554,
+        "volatility_63": 0.341260833145942,
+        "ma120_distance": -0.07684993198536694,
+        "raw_close": 46.6,
+        "limit_price": 47.06,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 19,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 17,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 16,
+            "reason": "低于或等于120日均线；63日涨幅不为正；20日未出现回撤；一手超过3000元槽位"
+          }
+        }
+      },
+      {
+        "symbol": "600309",
+        "name": "万华化学",
+        "sector": "化工",
+        "return_63": -0.04344624447717238,
+        "return_20": -0.1679477325134512,
+        "volatility_63": 0.30689087840579826,
+        "ma120_distance": -0.12227752877317055,
+        "raw_close": 64.95,
+        "limit_price": 65.59,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 15,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 16,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 3,
+            "reason": "低于或等于120日均线；63日涨幅不为正；一手超过3000元槽位"
+          }
+        }
+      },
+      {
+        "symbol": "600436",
+        "name": "片仔癀",
+        "sector": "医药",
+        "return_63": 0.046847939037062636,
+        "return_20": -0.008122743682310474,
+        "volatility_63": 0.38839609096334665,
+        "ma120_distance": -0.03837791400632129,
+        "raw_close": 120.89,
+        "limit_price": 122.09,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 11,
+            "reason": "低于或等于120日均线；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 19,
+            "reason": "低于或等于120日均线；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 11,
+            "reason": "低于或等于120日均线；一手超过3000元槽位"
+          }
+        }
+      },
+      {
+        "symbol": "600887",
+        "name": "伊利股份",
+        "sector": "食品",
+        "return_63": 0.12942122186495197,
+        "return_20": 0.06238185255198503,
+        "volatility_63": 0.19329206788256217,
+        "ma120_distance": 0.08136536808753547,
+        "raw_close": 28.1,
+        "limit_price": 28.38,
+        "quantity": 100,
+        "buy_total_cny": 2843.03,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 4,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 5,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 17,
+            "reason": "20日未出现回撤"
+          }
+        }
+      },
+      {
+        "symbol": "601390",
+        "name": "中国中铁",
+        "sector": "建筑",
+        "return_63": 0.04358353510895885,
+        "return_20": -0.015082266910420694,
+        "volatility_63": 0.18282752238318964,
+        "ma120_distance": -0.03194651373468005,
+        "raw_close": 4.31,
+        "limit_price": 4.35,
+        "quantity": 600,
+        "buy_total_cny": 2615.03,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 12,
+            "reason": "低于或等于120日均线"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 10,
+            "reason": "低于或等于120日均线"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 10,
+            "reason": "低于或等于120日均线"
+          }
+        }
+      },
+      {
+        "symbol": "601398",
+        "name": "工商银行",
+        "sector": "银行",
+        "return_63": 0.15961800818553895,
+        "return_20": 0.0625,
+        "volatility_63": 0.21115350365244306,
+        "ma120_distance": 0.1160286885021693,
+        "raw_close": 8.5,
+        "limit_price": 8.58,
+        "quantity": 300,
+        "buy_total_cny": 2579.03,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 2,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 7,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 18,
+            "reason": "20日未出现回撤"
+          }
+        }
+      },
+      {
+        "symbol": "601601",
+        "name": "中国太保",
+        "sector": "保险",
+        "return_63": 0.03196347031963476,
+        "return_20": -0.12114866886030518,
+        "volatility_63": 0.30220265258233536,
+        "ma120_distance": -0.07269614070526231,
+        "raw_close": 29.38,
+        "limit_price": 29.67,
+        "quantity": 100,
+        "buy_total_cny": 2972.03,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 13,
+            "reason": "低于或等于120日均线"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 15,
+            "reason": "低于或等于120日均线"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 4,
+            "reason": "低于或等于120日均线"
+          }
+        }
+      },
+      {
+        "symbol": "601668",
+        "name": "中国建筑",
+        "sector": "建筑",
+        "return_63": 0.032885595182955196,
+        "return_20": 0.015945330296127658,
+        "volatility_63": 0.17067881348802663,
+        "ma120_distance": 0.0010848827204368305,
+        "raw_close": 4.46,
+        "limit_price": 4.5,
+        "quantity": 600,
+        "buy_total_cny": 2705.03,
+        "signals": {
+          "momentum": {
+            "eligible": true,
+            "rank": 8,
+            "reason": "趋势向上，63日涨幅领先"
+          },
+          "low_vol": {
+            "eligible": true,
+            "rank": 2,
+            "reason": "趋势向上，63日波动较低"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 13,
+            "reason": "20日未出现回撤"
+          }
+        }
+      },
+      {
+        "symbol": "601688",
+        "name": "华泰证券",
+        "sector": "证券",
+        "return_63": -0.09656218402426697,
+        "return_20": -0.07505175983436851,
+        "volatility_63": 0.20739962060608574,
+        "ma120_distance": -0.0623114259477896,
+        "raw_close": 17.87,
+        "limit_price": 18.04,
+        "quantity": 100,
+        "buy_total_cny": 1809.02,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 18,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 11,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 6,
+            "reason": "低于或等于120日均线；63日涨幅不为正"
+          }
+        }
+      },
+      {
+        "symbol": "603288",
+        "name": "海天味业",
+        "sector": "食品",
+        "return_63": 0.019572953736654908,
+        "return_20": 0.0005820721769500548,
+        "volatility_63": 0.22905774286576133,
+        "ma120_distance": -0.025215484651444076,
+        "raw_close": 34.38,
+        "limit_price": 34.72,
+        "quantity": 0,
+        "buy_total_cny": 0.0,
+        "signals": {
+          "momentum": {
+            "eligible": false,
+            "rank": 14,
+            "reason": "低于或等于120日均线；一手超过3000元槽位"
+          },
+          "low_vol": {
+            "eligible": false,
+            "rank": 12,
+            "reason": "低于或等于120日均线；一手超过3000元槽位"
+          },
+          "reversal": {
+            "eligible": false,
+            "rank": 12,
+            "reason": "低于或等于120日均线；20日未出现回撤；一手超过3000元槽位"
+          }
+        }
+      }
+    ]
+  },
+  "budget_examples": [
+    {
+      "strategy_id": "momentum",
+      "asset_kind": "etf",
+      "initial_cash_cny": 10000,
+      "buy_total_cny": 5723.4,
+      "cash_remaining_cny": 4276.6,
+      "round_trip_fee_budget_cny": 20.0,
+      "positions": [
+        {
+          "symbol": "512800",
+          "name": "银行ETF",
+          "sector": "银行",
+          "return_63": 0.1251629726205996,
+          "return_20": 0.02494061757719712,
+          "volatility_63": 0.1689950636590336,
+          "ma120_distance": 0.07519960131648618,
+          "raw_close": 0.863,
+          "limit_price": 0.871,
+          "quantity": 3400,
+          "buy_total_cny": 2966.4,
+          "rank": 1,
+          "reason": "趋势向上，63日涨幅领先"
+        },
+        {
+          "symbol": "510880",
+          "name": "红利ETF",
+          "sector": "红利",
+          "return_63": 0.11855500821018072,
+          "return_20": -0.02630074328187537,
+          "volatility_63": 0.17420358034710548,
+          "ma120_distance": 0.04139647822907566,
+          "raw_close": 3.406,
+          "limit_price": 3.44,
+          "quantity": 800,
+          "buy_total_cny": 2757.0,
+          "rank": 2,
+          "reason": "趋势向上，63日涨幅领先"
+        }
+      ]
+    },
+    {
+      "strategy_id": "low_vol",
+      "asset_kind": "etf",
+      "initial_cash_cny": 10000,
+      "buy_total_cny": 5723.4,
+      "cash_remaining_cny": 4276.6,
+      "round_trip_fee_budget_cny": 20.0,
+      "positions": [
+        {
+          "symbol": "512800",
+          "name": "银行ETF",
+          "sector": "银行",
+          "return_63": 0.1251629726205996,
+          "return_20": 0.02494061757719712,
+          "volatility_63": 0.1689950636590336,
+          "ma120_distance": 0.07519960131648618,
+          "raw_close": 0.863,
+          "limit_price": 0.871,
+          "quantity": 3400,
+          "buy_total_cny": 2966.4,
+          "rank": 1,
+          "reason": "趋势向上，63日波动较低"
+        },
+        {
+          "symbol": "510880",
+          "name": "红利ETF",
+          "sector": "红利",
+          "return_63": 0.11855500821018072,
+          "return_20": -0.02630074328187537,
+          "volatility_63": 0.17420358034710548,
+          "ma120_distance": 0.04139647822907566,
+          "raw_close": 3.406,
+          "limit_price": 3.44,
+          "quantity": 800,
+          "buy_total_cny": 2757.0,
+          "rank": 2,
+          "reason": "趋势向上，63日波动较低"
+        }
+      ]
+    },
+    {
+      "strategy_id": "reversal",
+      "asset_kind": "etf",
+      "initial_cash_cny": 10000,
+      "buy_total_cny": 2757.0,
+      "cash_remaining_cny": 7243.0,
+      "round_trip_fee_budget_cny": 10.0,
+      "positions": [
+        {
+          "symbol": "510880",
+          "name": "红利ETF",
+          "sector": "红利",
+          "return_63": 0.11855500821018072,
+          "return_20": -0.02630074328187537,
+          "volatility_63": 0.17420358034710548,
+          "ma120_distance": 0.04139647822907566,
+          "raw_close": 3.406,
+          "limit_price": 3.44,
+          "quantity": 800,
+          "buy_total_cny": 2757.0,
+          "rank": 1,
+          "reason": "中期趋势仍向上，短期出现回撤"
+        }
+      ]
+    },
+    {
+      "strategy_id": "momentum",
+      "asset_kind": "stock",
+      "initial_cash_cny": 10000,
+      "buy_total_cny": 5319.06,
+      "cash_remaining_cny": 4680.94,
+      "round_trip_fee_budget_cny": 22.78,
+      "positions": [
+        {
+          "symbol": "600028",
+          "name": "中国石化",
+          "sector": "能源",
+          "return_63": 0.16433941997851775,
+          "return_20": -0.015440508628519534,
+          "volatility_63": 0.2978342404353907,
+          "ma120_distance": 0.08641727844453895,
+          "raw_close": 5.42,
+          "limit_price": 5.47,
+          "quantity": 500,
+          "buy_total_cny": 2740.03,
+          "rank": 1,
+          "reason": "趋势向上，63日涨幅领先"
+        },
+        {
+          "symbol": "601398",
+          "name": "工商银行",
+          "sector": "银行",
+          "return_63": 0.15961800818553895,
+          "return_20": 0.0625,
+          "volatility_63": 0.21115350365244306,
+          "ma120_distance": 0.1160286885021693,
+          "raw_close": 8.5,
+          "limit_price": 8.58,
+          "quantity": 300,
+          "buy_total_cny": 2579.03,
+          "rank": 2,
+          "reason": "趋势向上，63日涨幅领先"
+        }
+      ]
+    },
+    {
+      "strategy_id": "low_vol",
+      "asset_kind": "stock",
+      "initial_cash_cny": 10000,
+      "buy_total_cny": 4806.05,
+      "cash_remaining_cny": 5193.95,
+      "round_trip_fee_budget_cny": 22.5,
+      "positions": [
+        {
+          "symbol": "601668",
+          "name": "中国建筑",
+          "sector": "建筑",
+          "return_63": 0.032885595182955196,
+          "return_20": 0.015945330296127658,
+          "volatility_63": 0.17067881348802663,
+          "ma120_distance": 0.0010848827204368305,
+          "raw_close": 4.46,
+          "limit_price": 4.5,
+          "quantity": 600,
+          "buy_total_cny": 2705.03,
+          "rank": 2,
+          "reason": "趋势向上，63日波动较低"
+        },
+        {
+          "symbol": "600025",
+          "name": "华能水电",
+          "sector": "公用",
+          "return_63": 0.07900207900207912,
+          "return_20": 0.06461538461538474,
+          "volatility_63": 0.190942051697927,
+          "ma120_distance": 0.07966143564807004,
+          "raw_close": 10.38,
+          "limit_price": 10.48,
+          "quantity": 200,
+          "buy_total_cny": 2101.02,
+          "rank": 4,
+          "reason": "趋势向上，63日波动较低"
+        }
+      ]
+    },
+    {
+      "strategy_id": "reversal",
+      "asset_kind": "stock",
+      "initial_cash_cny": 10000,
+      "buy_total_cny": 2740.03,
+      "cash_remaining_cny": 7259.97,
+      "round_trip_fee_budget_cny": 11.43,
+      "positions": [
+        {
+          "symbol": "600028",
+          "name": "中国石化",
+          "sector": "能源",
+          "return_63": 0.16433941997851775,
+          "return_20": -0.015440508628519534,
+          "volatility_63": 0.2978342404353907,
+          "ma120_distance": 0.08641727844453895,
+          "raw_close": 5.42,
+          "limit_price": 5.47,
+          "quantity": 500,
+          "buy_total_cny": 2740.03,
+          "rank": 1,
+          "reason": "中期趋势仍向上，短期出现回撤"
+        }
+      ]
+    }
+  ],
+  "caveats": [
+    "历史数字为供应商前复权价格方向指数，未扣交易费用、不含整手和真实公司行动账务，不是可执行账户净收益。",
+    "按当前固定名单回看，存在人工选样和幸存者偏差；是探索样本，不代表全市场选股或样本外收益。",
+    "腾讯前复权历史为本次取得的当前版本，调整公式和历史修订未独立建立；同源复权序列没有第二来源验证。",
+    "当前名单仅价格信号和资金预算；未核验全部公告、基本面、涨跌停或停牌，不是已发委托，不改变现有现金账本。",
+    "佣金假设万三最低5元且包含经手/监管费、不含过户费；股票另加过户与卖出印花税，券商可能归并收费，不能重复收取；持有期红利税未纳入静态费用预算。",
+    "ETF历史比较采用同一60%初配尺度，期间暴露会随涨跌漂移；方向指数没有成交失败或最坏损失保证。"
+  ],
+  "source_evidence": [
+    {
+      "title": "腾讯公开日线接口：未复权与qfq分别留存",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get"
+    },
+    {
+      "title": "新浪公开日线接口：未复权OHLC交叉核对",
+      "url": "https://money.finance.sina.com.cn/quotes_service/api/json_v2.php/CN_MarketData.getKLineData"
+    },
+    {
+      "title": "上海证券交易所：ETF交易单位与T+1",
+      "url": "https://www.sse.com.cn/assortment/fund/etf/question/"
+    },
+    {
+      "title": "税务部门：证券交易印花税减半",
+      "url": "https://shanghai.chinatax.gov.cn/tax/zcfw/rdwd/202309/t468612.html"
+    },
+    {
+      "title": "国新证券：股票/基金手续费分项与收费归并示例",
+      "url": "https://www.crsec.com.cn/business/standard.html"
+    },
+    {
+      "title": "中国神华2025年8月复牌公告：解释历史10日停牌缺口",
+      "url": "https://big5.sse.com.cn/site/cht/www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2025-08-16/601088_20250816_0ATF.pdf"
+    }
+  ]
+}
