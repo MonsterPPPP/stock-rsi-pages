@@ -1,0 +1,198 @@
+{
+  "id": "EXP-0002",
+  "title": "一万元账户：最低佣金与滑点诊断",
+  "as_of": "2026-10-15",
+  "headline": "降低交易摩擦，仍未让本段趋势实验转为盈利。",
+  "conclusion": "两个单因素实验完整保留所有情景；固定交易路径的无摩擦毛损益为负，没有可使其盈亏平衡的非负成本预算。正式方案继续遵循已冻结的现金规则。",
+  "design": "单因素敏感性诊断，7个唯一成本情景；不做4×4寻优，不筛选赢家。",
+  "symbol": "510300",
+  "initial_cash_cny": 10000,
+  "target_exposure": 0.6,
+  "commission_rate": 0.0003,
+  "evaluation_start": "2026-04-23",
+  "evaluation_end": "2026-10-15",
+  "evaluation_sessions": 116,
+  "corporate_actions_confirmed": false,
+  "baseline": {
+    "net_return": -0.01956,
+    "max_drawdown": -0.04550322241476664,
+    "commission_cny": 30.0,
+    "slippage_cny": 14.4,
+    "trade_count": 6
+  },
+  "min_commission_cases": [
+    {
+      "id": "minimum_0",
+      "min_commission_cny": 0,
+      "slippage_bps_each_side": 5,
+      "trend_net_return": -0.017602,
+      "trend_max_drawdown": -0.04451049542776333,
+      "buy_hold_net_return": -0.069774,
+      "buy_hold_max_drawdown": -0.0987107913334483,
+      "trend_commission_cny": 10.42,
+      "trend_slippage_cny": 14.4,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    },
+    {
+      "id": "minimum_1",
+      "min_commission_cny": 1,
+      "slippage_bps_each_side": 5,
+      "trend_net_return": -0.017602,
+      "trend_max_drawdown": -0.04451049542776333,
+      "buy_hold_net_return": -0.069774,
+      "buy_hold_max_drawdown": -0.0987107913334483,
+      "trend_commission_cny": 10.42,
+      "trend_slippage_cny": 14.4,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    },
+    {
+      "id": "baseline",
+      "min_commission_cny": 5,
+      "slippage_bps_each_side": 5,
+      "trend_net_return": -0.01956,
+      "trend_max_drawdown": -0.04550322241476664,
+      "buy_hold_net_return": -0.0701,
+      "buy_hold_max_drawdown": -0.09874197987943166,
+      "trend_commission_cny": 30.0,
+      "trend_slippage_cny": 14.4,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    },
+    {
+      "id": "minimum_10",
+      "min_commission_cny": 10,
+      "slippage_bps_each_side": 5,
+      "trend_net_return": -0.02256,
+      "trend_max_drawdown": -0.04703221277591452,
+      "buy_hold_net_return": -0.0706,
+      "buy_hold_max_drawdown": -0.09878985338608332,
+      "trend_commission_cny": 60.0,
+      "trend_slippage_cny": 14.4,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    }
+  ],
+  "slippage_cases": [
+    {
+      "id": "slippage_0",
+      "min_commission_cny": 5,
+      "slippage_bps_each_side": 0,
+      "trend_net_return": -0.01812,
+      "trend_max_drawdown": -0.04477089211012744,
+      "buy_hold_net_return": -0.06986,
+      "buy_hold_max_drawdown": -0.09871901707331253,
+      "trend_commission_cny": 30.0,
+      "trend_slippage_cny": 0.0,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    },
+    {
+      "id": "baseline",
+      "min_commission_cny": 5,
+      "slippage_bps_each_side": 5,
+      "trend_net_return": -0.01956,
+      "trend_max_drawdown": -0.04550322241476664,
+      "buy_hold_net_return": -0.0701,
+      "buy_hold_max_drawdown": -0.09874197987943166,
+      "trend_commission_cny": 30.0,
+      "trend_slippage_cny": 14.4,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    },
+    {
+      "id": "slippage_10",
+      "min_commission_cny": 5,
+      "slippage_bps_each_side": 10,
+      "trend_net_return": -0.02172,
+      "trend_max_drawdown": -0.04660364486892116,
+      "buy_hold_net_return": -0.07046,
+      "buy_hold_max_drawdown": -0.09877644412557444,
+      "trend_commission_cny": 30.0,
+      "trend_slippage_cny": 36.0,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    },
+    {
+      "id": "slippage_20",
+      "min_commission_cny": 5,
+      "slippage_bps_each_side": 20,
+      "trend_net_return": -0.02532,
+      "trend_max_drawdown": -0.0484428390120082,
+      "buy_hold_net_return": -0.07106,
+      "buy_hold_max_drawdown": -0.09883393802991793,
+      "trend_commission_cny": 30.0,
+      "trend_slippage_cny": 72.0,
+      "trend_trade_count": 6,
+      "same_trade_quantities_as_baseline": true
+    }
+  ],
+  "break_even": {
+    "fixed_baseline_path_gross_profit_cny": -151.2,
+    "signed_friction_budget_cny": -151.2,
+    "nonnegative_break_even_budget_exists": false,
+    "maximum_nonnegative_friction_budget_cny": null,
+    "signed_budget_bps_of_two_way_open_turnover": -43.55340477013481,
+    "resized_zero_friction_net_profit_cny": -151.2,
+    "zero_friction_same_trade_dates_sides_quantities": true,
+    "interpretation": "Signed negative budget is a gross loss, not a feasible negative fee or forecast."
+  },
+  "one_lot_example": {
+    "label": "合成ETF价格5元×100份，连续成本预算演示",
+    "one_way_nominal_cny": 500,
+    "slippage_bps_each_side": 5,
+    "cases": [
+      {
+        "min_commission_cny": 0,
+        "one_way_commission_cny": 0.15,
+        "one_way_commission_fraction_of_notional": 0.0003,
+        "buy_friction_cny": 0.4,
+        "buy_friction_fraction": 0.0008,
+        "round_trip_friction_cny": 0.8,
+        "round_trip_friction_fraction_of_one_way_notional": 0.0016,
+        "round_trip_friction_fraction_of_10000_account": 8e-05
+      },
+      {
+        "min_commission_cny": 1,
+        "one_way_commission_cny": 1.0,
+        "one_way_commission_fraction_of_notional": 0.002,
+        "buy_friction_cny": 1.25,
+        "buy_friction_fraction": 0.0025,
+        "round_trip_friction_cny": 2.5,
+        "round_trip_friction_fraction_of_one_way_notional": 0.005,
+        "round_trip_friction_fraction_of_10000_account": 0.00025
+      },
+      {
+        "min_commission_cny": 5,
+        "one_way_commission_cny": 5.0,
+        "one_way_commission_fraction_of_notional": 0.01,
+        "buy_friction_cny": 5.25,
+        "buy_friction_fraction": 0.0105,
+        "round_trip_friction_cny": 10.5,
+        "round_trip_friction_fraction_of_one_way_notional": 0.021,
+        "round_trip_friction_fraction_of_10000_account": 0.00105
+      },
+      {
+        "min_commission_cny": 10,
+        "one_way_commission_cny": 10.0,
+        "one_way_commission_fraction_of_notional": 0.02,
+        "buy_friction_cny": 10.25,
+        "buy_friction_fraction": 0.0205,
+        "round_trip_friction_cny": 20.5,
+        "round_trip_friction_fraction_of_one_way_notional": 0.041,
+        "round_trip_friction_fraction_of_10000_account": 0.00205
+      }
+    ]
+  },
+  "cash_benchmark_return": 0,
+  "caveats": [
+    "短样本、单标的、已看过历史区间，不能证明策略泛化或盈利能力。",
+    "公司行动未完全确认；原始价格诊断没有完整分红或折算账务。",
+    "交易日历未完整核验，日线开盘加滑点只是假设成交，不保证真实成交。",
+    "所有佣金和滑点均为研究假设，不是用户实际账户报价。",
+    "固定数量用于分解摩擦；正式情景仍按各自现金余额重新计算整数份额。",
+    "同一执行器复现不是独立框架交叉验证；本实验不改变正式现金规则。"
+  ],
+  "units": "Returns and drawdowns are decimal fractions; fees in CNY; slippage in basis points per side."
+}
