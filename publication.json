@@ -23,5 +23,34 @@
       "actual_fills": 0,
       "note": "Two existing CNY10000 accounts preserved. Opening-model orders require target-session data and corporate-action checks; no live trading."
     }
+  ],
+  "current_mode": "five_independent_historical_simulation_agents; manual bounded research only",
+  "account_events": [
+    {
+      "type": "legacy_accounts_archived",
+      "date": "2026-10-18",
+      "accounts": 2,
+      "pending_orders_cancelled": 2,
+      "actual_fills": 0,
+      "note": "Original ledgers and publication records retained; archived accounts reject all further trading."
+    }
+  ],
+  "historical_simulations": [
+    {
+      "id": "HIST-0001",
+      "status": "frozen_historical_result",
+      "label": "全期寻优后的历史模拟",
+      "period": {
+        "start": "2026-04-20",
+        "end": "2026-10-16"
+      },
+      "agents": 5,
+      "initial_capital_each_cny": 10000,
+      "candidates": 300,
+      "universe_observed": 35,
+      "universe_eligible": 33,
+      "freeze_sha256": "888d34657ee935e29f3b4868d92eb237ad120ba1c709aaca54991f2716151338",
+      "note": "Both complete versions retained. In-sample strategy selection; no post-publication or unseen-sample performance claim. Actual HTTP release evidence is separately retained privately."
+    }
   ]
 }
