@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-10-18T13:22:16+08:00",
+  "data_as_of": "2026-10-16",
+  "mode": "manual_only",
+  "schema_version": 1,
+  "accounts": [
+    {
+      "id": "defensive",
+      "name": "宽基趋势",
+      "strategy_id": "broad_trend",
+      "strategy_version": "1",
+      "status": "pending_publication",
+      "as_of": "2026-10-16",
+      "summary": "沪深300ETF前复权收盘 4.236 不高于 120日均价 4.744；趋势条件未成立，目标持现。 本次无新增委托。",
+      "selection_logic": "只观察沪深300 ETF；前复权收盘价高于最近120个交易日均价时持有，否则持现。",
+      "buy_rule": "每次手动唤醒使用最新已完成收盘；由空仓转为趋势成立时，为下一交易日冻结一日有效限价买单。",
+      "sell_rule": "收盘价不再高于120日均价时，为下一交易日冻结卖出全部持仓的限价单；未成交则下次唤醒重评。",
+      "allocation_rule": "首次目标不超过净值60%，100份整手；持有期间不因价格变化再平衡，保留至少100元现金。",
+      "status_label": "新规则待发布",
+      "rule_status_label": "待发布 · 未生效",
+      "current_rule_version": "RULE-0001",
+      "proposed_rule_version": "STRAT-0001",
+      "effective_not_before": "2026-10-19T09:30:00+08:00",
+      "drawdown_scope": "verified_observed_closes",
+      "valuation_status": "verified",
+      "universe": [
+        {
+          "symbol": "510300",
+          "name": "沪深300ETF"
+        }
+      ],
+      "cost_assumptions": "模拟假设：每笔佣金 0.03%，最低 ¥5.00；开盘滑点 0.05%。",
+      "rules_package_url": "strategies/STRAT-0001.json",
+      "initial_capital_cny": 10000,
+      "cash_cny": 10000,
+      "fees_cny": 0,
+      "equity_cny": 10000.0,
+      "net_return": 0.0,
+      "max_drawdown": 0,
+      "holdings": [],
+      "orders": [],
+      "order_history": [],
+      "fills": [],
+      "plan": {
+        "status": "hold",
+        "reason": "沪深300ETF前复权收盘 4.236 不高于 120日均价 4.744；趋势条件未成立，目标持现。 本次无新增委托。",
+        "as_of": "2026-10-16",
+        "status_label": "保持现状",
+        "orders": []
+      },
+      "benchmark": {
+        "status": "not_implemented",
+        "description": "计划比较同期60%沪深300买持与40%不计息现金；连续基准账户尚未实现，不能据此判断跑赢",
+        "net_return": null
+      }
+    },
+    {
+      "id": "balanced_research",
+      "name": "ETF动量轮动",
+      "strategy_id": "etf_momentum",
+      "strategy_version": "1",
+      "status": "pending_publication",
+      "as_of": "2026-10-16",
+      "summary": "固定5只ETF按60日正动量排名：银行ETF60日涨幅 +10.49%，收盘 0.864 > 均价 0.803；红利ETF60日涨幅 +9.03%，收盘 3.430 > 均价 3.272。 整数数量和限价已固定，目标交易日须再核验。",
+      "selection_logic": "固定5只ETF中，前复权收盘高于120日均价且60日涨幅为正，按涨幅从高到低取前2只；同分按代码排序。",
+      "buy_rule": "启用时及此后每个自然月第一次手动唤醒形成目标，下一交易日尝试成交；月内不为错过的单追价或换仓。",
+      "sell_rule": "月度重评时卖出落选标的或超出目标的整手数量；数据缺失则冻结该账户的新交易并保留现有持仓。",
+      "allocation_rule": "每只最多30%净值，共最多60%；不足2只时余款持现，100份整手，先卖后买，保留100元现金。",
+      "status_label": "新规则待发布",
+      "rule_status_label": "待发布 · 未生效",
+      "current_rule_version": "RULE-0001",
+      "proposed_rule_version": "STRAT-0001",
+      "effective_not_before": "2026-10-19T09:30:00+08:00",
+      "drawdown_scope": "verified_observed_closes",
+      "valuation_status": "verified",
+      "universe": [
+        {
+          "symbol": "510300",
+          "name": "沪深300ETF"
+        },
+        {
+          "symbol": "510500",
+          "name": "中证500ETF"
+        },
+        {
+          "symbol": "159915",
+          "name": "创业板ETF"
+        },
+        {
+          "symbol": "510880",
+          "name": "红利ETF"
+        },
+        {
+          "symbol": "512800",
+          "name": "银行ETF"
+        }
+      ],
+      "cost_assumptions": "模拟假设：每笔佣金 0.03%，最低 ¥5.00；开盘滑点 0.05%。",
+      "rules_package_url": "strategies/STRAT-0001.json",
+      "initial_capital_cny": 10000,
+      "cash_cny": 10000,
+      "fees_cny": 0,
+      "equity_cny": 10000.0,
+      "net_return": 0.0,
+      "max_drawdown": 0,
+      "holdings": [],
+      "orders": [],
+      "order_history": [],
+      "fills": [],
+      "plan": {
+        "status": "orders_prepared",
+        "reason": "固定5只ETF按60日正动量排名：银行ETF60日涨幅 +10.49%，收盘 0.864 > 均价 0.803；红利ETF60日涨幅 +9.03%，收盘 3.430 > 均价 3.272。 整数数量和限价已固定，目标交易日须再核验。",
+        "as_of": "2026-10-16",
+        "status_label": "待发布 · 未生效",
+        "orders": [
+          {
+            "symbol": "512800",
+            "side": "buy",
+            "reason": "固定池60日正动量排名前列；银行ETF60日涨幅 +10.49%，前复权收盘 0.864，120日均价 0.803",
+            "id": "STRAT-0001:balanced_research:1",
+            "name": "银行ETF",
+            "session_date": "2026-10-19",
+            "status": "frozen_pending_publication",
+            "execution_model": "conservative_opening_only",
+            "quantity": 3400,
+            "limit_price": 0.872
+          },
+          {
+            "symbol": "510880",
+            "side": "buy",
+            "reason": "固定池60日正动量排名前列；红利ETF60日涨幅 +9.03%，前复权收盘 3.430，120日均价 3.272",
+            "id": "STRAT-0001:balanced_research:2",
+            "name": "红利ETF",
+            "session_date": "2026-10-19",
+            "status": "frozen_pending_publication",
+            "execution_model": "conservative_opening_only",
+            "quantity": 800,
+            "limit_price": 3.464
+          }
+        ]
+      },
+      "benchmark": {
+        "status": "not_implemented",
+        "description": "计划比较同期60%沪深300买持与40%不计息现金；连续基准账户尚未实现，不能据此判断跑赢",
+        "net_return": null
+      }
+    }
+  ]
+}
