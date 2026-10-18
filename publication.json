@@ -10,5 +10,18 @@
   "rules_sha256": "7f6c47e994c16a0abc02fe96962fe629dc4159501385d08040f3800257e23a4d",
   "frozen_report_sha256": "3017f704e657737e50599497c3c5eead667bd10c51f9a911fbb0b3a31e504593",
   "accounts": "Both independent CNY 10000 accounts scheduled under cash-only rule; no post-publication performance yet",
-  "mode": "Manual runs only; no background research"
+  "mode": "Manual runs only; no background research",
+  "strategy_publications": [
+    {
+      "id": "STRAT-0001",
+      "status": "verified_and_scheduled",
+      "verified_at": "2026-10-18T13:25:48+08:00",
+      "public_commit": "da151c7e18194d9a631beed8351b0754a5539c52",
+      "effective_not_before": "2026-10-19T09:30:00+08:00",
+      "strategy_public_sha256": "9aee10743919070a9cfe16c31c7b10b9f5ce5cf3df91b5d323778db842868c0f",
+      "rules_sha256": "7664680090fae6236755c37db50018bbefec33b72fbb4d4b4e1b9e00cc848c15",
+      "actual_fills": 0,
+      "note": "Two existing CNY10000 accounts preserved. Opening-model orders require target-session data and corporate-action checks; no live trading."
+    }
+  ]
 }
