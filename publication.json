@@ -51,6 +51,24 @@
       "universe_eligible": 33,
       "freeze_sha256": "888d34657ee935e29f3b4868d92eb237ad120ba1c709aaca54991f2716151338",
       "note": "Both complete versions retained. In-sample strategy selection; no post-publication or unseen-sample performance claim. Actual HTTP release evidence is separately retained privately."
+    },
+    {
+      "id": "HIST-0002",
+      "status": "frozen_historical_result",
+      "label": "全期寻优后的历史模拟",
+      "period": {
+        "end": "2026-10-16",
+        "start": "2026-04-20"
+      },
+      "agents": 5,
+      "initial_capital_each_cny": 20000,
+      "candidates": 400,
+      "method_families": 20,
+      "universe_observed": 115,
+      "universe_eligible": 90,
+      "capitalization_eligible_stocks": 66,
+      "freeze_sha256": "5169c9ffece9be45f2231825382f01a5cf58ff533fe653ee71a2cf41851d1b66",
+      "note": "New complete replay at CNY20000 per Agent, with expanded predetermined observation pool. HIST-0001 preserved. Relative-size research is not a full-A-share unbiased small-cap test. In-sample selection through 2026-10-16; no unseen-sample performance claim."
     }
   ]
 }
