@@ -24,7 +24,7 @@
       "note": "Two existing CNY10000 accounts preserved. Opening-model orders require target-session data and corporate-action checks; no live trading."
     }
   ],
-  "current_mode": "five_independent_historical_simulation_agents; manual bounded research only",
+  "current_mode": "selected_strategy_research_manager; manual bounded research with full reports",
   "account_events": [
     {
       "type": "legacy_accounts_archived",
@@ -70,5 +70,16 @@
       "freeze_sha256": "5169c9ffece9be45f2231825382f01a5cf58ff533fe653ee71a2cf41851d1b66",
       "note": "New complete replay at CNY20000 per Agent, with expanded predetermined observation pool. HIST-0001 preserved. Relative-size research is not a full-A-share unbiased small-cap test. In-sample selection through 2026-10-16; no unseen-sample performance claim."
     }
-  ]
+  ],
+  "interaction_contract": {
+    "version": "INTERACTION-0001",
+    "approved_on": "2026-10-24",
+    "homepage": "dynamic selected strategies; target 3-5, quality first",
+    "research_round_report": "full frozen technical report for each manual research round",
+    "performance_basis": "historical backtest primary; forward simulation separate",
+    "initial_capital_each_cny": 20000,
+    "current_roster": "ROSTER-0001",
+    "selected_count": 3,
+    "tracking_start_rule": "first verified trading session after actual public verification; no backfill"
+  }
 }
