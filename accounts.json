@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "mode": "selected_strategies",
-  "generated_at": "2026-10-24T13:25:55+08:00",
-  "roster_id": "ROSTER-0001",
+  "generated_at": "2026-10-24T13:54:43+08:00",
+  "roster_id": "ROSTER-0002",
   "report_index_url": "research/reports/index.html",
   "performance_basis": "historical_backtest_default_forward_tracking_separate",
   "strategies": [
@@ -1703,7 +1703,7 @@
       "evidence_level": "in_sample",
       "account_id": "TRACK-0002",
       "tradeoffs": [
-        "回撤和波动较高；三个邻近窗口亏损，成本加倍后回撤增大；与防御方法相关性较高。"
+        "回撤和波动较高；四个邻近候选两负两正，窗口敏感；成本加倍后回撤增大，与防御方法相关性较高。"
       ],
       "color": "#a9df9b",
       "backtest": {
