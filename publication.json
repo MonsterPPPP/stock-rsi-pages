@@ -81,6 +81,14 @@
     "current_roster": "ROSTER-0002",
     "selected_count": 3,
     "tracking_start_rule": "first verified trading session after actual public verification; no backfill",
-    "correction": "Neighbor-description correction only; same three frozen strategy versions and performance"
+    "correction": "Neighbor-description correction only; same three frozen strategy versions and performance",
+    "tracking_activation": {
+      "authorizing_public_commit": "5fdd7db004371a4d941fa2b96cb2ca7c103069df",
+      "verified_at": "2026-10-24T14:04:23+08:00",
+      "accounts": 3,
+      "initial_cash_each_cny": 20000,
+      "observed_sessions": 0,
+      "status": "awaiting_first_verified_session"
+    }
   }
 }
