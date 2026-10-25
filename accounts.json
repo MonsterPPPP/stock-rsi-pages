@@ -1678,20 +1678,32 @@
         }
       },
       "tracking": {
-        "status": "not_started",
+        "status": "awaiting_first_session",
         "account_id": "TRACK-0001",
+        "current_version_id": "SELECT-0001-v1",
         "as_of": null,
         "inception_date": null,
         "effective_from": null,
-        "effective_after_date": null,
-        "initial_capital_cny": 20000,
-        "metrics": {},
+        "effective_after_date": "2026-10-24",
+        "initial_capital_cny": 20000.0,
+        "metrics": {
+          "ending_equity_cny": 20000.0,
+          "net_return": 0.0,
+          "max_drawdown": 0,
+          "annualized_volatility": 0,
+          "ending_cash_cny": 20000.0,
+          "receivable_cny": 0.0,
+          "total_fees_cny": 0.0,
+          "trade_count": 0,
+          "turnover": 0.0
+        },
         "current_strategy_metrics": null,
         "equity_curve": [],
         "holdings": [],
         "trades": [],
         "scheduled_changes": [],
-        "segments": []
+        "segments": [],
+        "note": "发布核验后的下一核验交易日启用；仅按手动唤醒补算，不倒签历史成交。"
       }
     },
     {
@@ -3480,20 +3492,32 @@
         }
       },
       "tracking": {
-        "status": "not_started",
+        "status": "awaiting_first_session",
         "account_id": "TRACK-0002",
+        "current_version_id": "SELECT-0002-v1",
         "as_of": null,
         "inception_date": null,
         "effective_from": null,
-        "effective_after_date": null,
-        "initial_capital_cny": 20000,
-        "metrics": {},
+        "effective_after_date": "2026-10-24",
+        "initial_capital_cny": 20000.0,
+        "metrics": {
+          "ending_equity_cny": 20000.0,
+          "net_return": 0.0,
+          "max_drawdown": 0,
+          "annualized_volatility": 0,
+          "ending_cash_cny": 20000.0,
+          "receivable_cny": 0.0,
+          "total_fees_cny": 0.0,
+          "trade_count": 0,
+          "turnover": 0.0
+        },
         "current_strategy_metrics": null,
         "equity_curve": [],
         "holdings": [],
         "trades": [],
         "scheduled_changes": [],
-        "segments": []
+        "segments": [],
+        "note": "发布核验后的下一核验交易日启用；仅按手动唤醒补算，不倒签历史成交。"
       }
     },
     {
@@ -5384,20 +5408,32 @@
         }
       },
       "tracking": {
-        "status": "not_started",
+        "status": "awaiting_first_session",
         "account_id": "TRACK-0003",
+        "current_version_id": "SELECT-0003-v1",
         "as_of": null,
         "inception_date": null,
         "effective_from": null,
-        "effective_after_date": null,
-        "initial_capital_cny": 20000,
-        "metrics": {},
+        "effective_after_date": "2026-10-24",
+        "initial_capital_cny": 20000.0,
+        "metrics": {
+          "ending_equity_cny": 20000.0,
+          "net_return": 0.0,
+          "max_drawdown": 0,
+          "annualized_volatility": 0,
+          "ending_cash_cny": 20000.0,
+          "receivable_cny": 0.0,
+          "total_fees_cny": 0.0,
+          "trade_count": 0,
+          "turnover": 0.0
+        },
         "current_strategy_metrics": null,
         "equity_curve": [],
         "holdings": [],
         "trades": [],
         "scheduled_changes": [],
-        "segments": []
+        "segments": [],
+        "note": "发布核验后的下一核验交易日启用；仅按手动唤醒补算，不倒签历史成交。"
       }
     }
   ],
